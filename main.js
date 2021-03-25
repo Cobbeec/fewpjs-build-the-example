@@ -3,7 +3,22 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+modal.className = "hidden"
 
+for (const heart of likeButtons) {
+  heart.addEventListener('click', () => {
+    mimicServerCall()
+    .then(()=> {
+      heart.className = "activated-heart"
+    })
+    .catch(() => {
+      modal.style.visibility = "visible"
+    })
+  })
+}
+document.addEventListener('DOMContentLoaded', function() {
+
+})
 
 
 
